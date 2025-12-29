@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  vless-reality:
+    images: ly920907/vless-reality:latest
+    container_name: vless-reality
+    restart: unless-stopped
+
+    environment:
+      PORT: 443
+      DOMAIN: apple.com
+      NODE_NAME: vless-reality
+
+    volumes:
+      - ./conf:/app/conf
+
+    ports:
+      - "443:443/tcp"
+
+    network_mode: "host"
+
