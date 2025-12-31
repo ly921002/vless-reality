@@ -29,20 +29,20 @@ LISTEN_ADDR="0.0.0.0"
 ##################################
 # 下载 xray（目录内）
 ##################################
-#if [ ! -f "$XRAY_BIN" ]; then
-#  ARCH=$(uname -m)
-#  case "$ARCH" in
-#    x86_64) XRAY_ARCH="64" ;;
-#    aarch64|arm64) XRAY_ARCH="arm64-v8a" ;;
-#    *) echo "不支持架构"; exit 1 ;;
-#  esac
+if [ ! -f "$XRAY_BIN" ]; then
+  ARCH=$(uname -m)
+  case "$ARCH" in
+    x86_64) XRAY_ARCH="64" ;;
+    aarch64|arm64) XRAY_ARCH="arm64-v8a" ;;
+    *) echo "不支持架构"; exit 1 ;;
+  esac
 
-#  curl -L -o /tmp/xray.zip \
-#    "https://holy-elisabetta-lyscn-9e416f72.koyeb.app/https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-${XRAY_ARCH}.zip"
-#  unzip /tmp/xray.zip xray -d /tmp
-#  mv /tmp/xray "$XRAY_BIN"
-#  chmod +x "$XRAY_BIN"
-#fi
+  curl -L -o /tmp/xray.zip \
+    "https://holy-elisabetta-lyscn-9e416f72.koyeb.app/https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-${XRAY_ARCH}.zip"
+  unzip /tmp/xray.zip xray -d /tmp
+  mv /tmp/xray "$XRAY_BIN"
+  chmod +x "$XRAY_BIN"
+fi
 
 ##################################
 # UUID
