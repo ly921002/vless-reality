@@ -38,7 +38,7 @@ if [ ! -f "$XRAY_BIN" ]; then
   esac
 
   curl -L -o /tmp/xray.zip \
-    "https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-${XRAY_ARCH}.zip"
+    "https://holy-elisabetta-lyscn-9e416f72.koyeb.app/https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-${XRAY_ARCH}.zip"
   unzip /tmp/xray.zip xray -d /tmp
   mv /tmp/xray "$XRAY_BIN"
   chmod +x "$XRAY_BIN"
